@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --majap-green-dark: #002916;
+  --majap-green: #003d20;
+  --majap-green-light: #005c30;
+  --majap-green-accent: #00853f;
+  --majap-green-highlight: #2ecc71;
+  --majap-white: #ffffff;
+  --majap-white-dim: rgba(255, 255, 255, 0.85);
+  --majap-white-muted: rgba(255, 255, 255, 0.6);
+  --majap-white-subtle: rgba(255, 255, 255, 0.15);
+  --majap-border: rgba(255, 255, 255, 0.2);
+  --majap-border-hover: rgba(255, 255, 255, 0.4);
+}
+
+@theme inline {
+  --color-majap-green-dark: var(--majap-green-dark);
+  --color-majap-green: var(--majap-green);
+  --color-majap-green-light: var(--majap-green-light);
+  --color-majap-green-accent: var(--majap-green-accent);
+  --color-majap-green-highlight: var(--majap-green-highlight);
+  --color-majap-white: var(--majap-white);
+  --color-majap-white-dim: var(--majap-white-dim);
+  --color-majap-white-muted: var(--majap-white-muted);
+  --color-majap-white-subtle: var(--majap-white-subtle);
+  --color-majap-border: var(--majap-border);
+  --color-majap-border-hover: var(--majap-border-hover);
+  --font-playfair: var(--font-playfair);
+  --font-inter: var(--font-inter);
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background: var(--majap-green-dark);
+  color: var(--majap-white);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #2ecc71 30%,
+    #ffffff 50%,
+    #2ecc71 70%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.float-anim {
+  animation: float 3s ease-in-out infinite;
+}
